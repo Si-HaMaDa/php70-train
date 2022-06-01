@@ -31,8 +31,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Add Customer</h1>
     </div>
-    <form class="needs-validation" method="post">
-        <div class="row g-3">
+    <form class="card row g-3 my-3" method="post">
+        <div class="card-body row">
             <div class="col-sm-6">
                 <label for="firstName" class="form-label">First name</label>
                 <input type="text" class="form-control" id="firstName" name="firstname" placeholder="" value="" required="">
@@ -60,6 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <hr class="my-4">
 
             <button class="w-100 btn btn-primary btn-lg" type="submit">Save</button>
+        </div>
     </form>
 </div>
 
