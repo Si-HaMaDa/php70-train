@@ -5,13 +5,6 @@ require 'parts/header.php';
 
 $id = (int) test_input($_GET['id']);
 
-function test_input($data)
-{
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
-}
 $firstname = $lastname = $email = '';
 
 
