@@ -2,13 +2,14 @@
 
 session_start();
 
-$db_servername = "localhost";
-$db_username = "root";
-$db_password = "root";
-$db_name = "php70";
+define('DB_TYPE', "mysql");
+define('DB_HOST', "localhost");
+define('DB_USER_NAME', "root");
+define('DB_PASSWORD', "root");
+define('DB_NAME', "php70");
 
 try {
-    $conn = new PDO("mysql:host=$db_servername;dbname=$db_name", $db_username, $db_password);
+    $conn = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER_NAME, DB_PASSWORD);
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
