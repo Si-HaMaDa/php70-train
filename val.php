@@ -37,9 +37,9 @@ $passCheck = new Validations('123456');
 $passCheck->notEmpty();
 $passCheck->min(5);
 $passCheck->max(20);
-// $passCheck->isFile();
+$passCheck->isFile();
 
-// var_dump($passCheck);
+var_dump($passCheck);
  */
 
 $db = new DB();

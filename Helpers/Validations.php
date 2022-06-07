@@ -79,17 +79,29 @@ class Validations
         return $this;
     }
 
+    protected function checkFile()
+    {
+        return is_file($this->value);
+    }
+
     public function isFile()
     {
-        $check = getimagesize($this->value);
-        if ($check == false) {
+        if ($this->checkFile() == false) {
             $this->error = true;
-            $this->messages[] = "File is not an image.";
+            $this->messages[] = "Input is not a File.";
         }
         return $this;
     }
 
-    // TODO:: image validation
+    public function isImage()
+    {
+        $check = $this->checkFile() ? getimagesize($this->value) : false;
+        if ($check == false) {
+            $this->error = true;
+            $this->messages[] = "Input is not an image.";
+        }
+        return $this;
+    }
 
     public function checkErrors()
     {
